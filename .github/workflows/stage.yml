@@ -14,4 +14,4 @@ jobs:
             mkdir -p /opt/${GITHUB_REPOSITORY##*\/}_${GITHUB_REF##*\/}
             cd /opt/${GITHUB_REPOSITORY##*\/}_${GITHUB_REF##*\/}
             pwd  
-            git pull
+            echo "github action CD pipeline finsh" > github_action
