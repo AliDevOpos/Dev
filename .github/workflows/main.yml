@@ -12,6 +12,8 @@ jobs:
               echo ${GITHUB_REPOSITORY} 
               mkdir -p /opt/${GITHUB_REPOSITORY}
               cd /opt/$GITHUB_REPOSITORY
+              pwd
               touch test 
+              pwd
               ls
           
