@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get Repo Branch Name
-        run: echo running on branch ${Bra_Name} and repo name is ${Repo_Name}
+        run: echo running on branch $Bra_Name and repo name is ${Repo_Name}
       - name: Create Directory base on repo and branch name
         run: | 
             mkdir -p /opt/${GITHUB_REPOSITORY##*\/}_${GITHUB_REF##*\/}
