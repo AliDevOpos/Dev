@@ -7,10 +7,12 @@ jobs:
   branch-name:
     runs-on: ubuntu-latest
     steps:
-      - name: Branch name
+      - name: Get Repo Branch Name
         run: echo running on branch ${GITHUB_REF##*/} and repo name is ${GITHUB_REPOSITORY##*/}
-      - name: touch new file
-        run: touch ${GITHUB_REF##*/}
-      - name: test command
-        run: echo  "test command"
-
+      - name: Create Directory base on repo and branch name
+        run: | 
+            mkdir -p /opt/$Dir_Name cd mkdir -p /opt/$Dir_Name pwd 
+        env :
+          Dir_Name: ${GITHUB_REPOSITORY##*/}_${GITHUB_REF##*/}
+            
+      
