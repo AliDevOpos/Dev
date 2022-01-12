@@ -8,4 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Branch name
-        run: echo running on branch ${GITHUB_REF##*/} and repo name is ${GITHUB_REPOSITORY##*/}
+        #run: echo running on branch ${GITHUB_REF##*/} and repo name is ${GITHUB_REPOSITORY##*/}
+        run: mkdir /opt/${GITHUB_REPOSITORY##*/}"_"${GITHUB_REF##*/}
