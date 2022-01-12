@@ -5,7 +5,7 @@ on:
       - 'stage'
 jobs:
   branch-name:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Get Repo Branch Name
         run: echo running on branch ${GITHUB_REF##*\/} and repo name is ${GITHUB_REPOSITORY##*\/}
