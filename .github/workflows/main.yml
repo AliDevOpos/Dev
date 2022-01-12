@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Branch name
         #run: mkdir -p `${GITHUB_REPOSITORY##*/}_${GITHUB_REPOSITORY##*/}`
-        run: echo $REPO_NAME
+        run: echo "$REPO_NAME"
         env:
-          REPO_NAME: "${GITHUB_REPOSITORY##*/}"
+          REPO_NAME: ${GITHUB_REPOSITORY##*/}
           
