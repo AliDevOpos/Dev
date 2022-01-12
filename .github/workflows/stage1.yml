@@ -1,8 +1,8 @@
-name: Stage CD
+name: Stage1 CD
 on:
   push:
     branches:
-      - 'stage'
+      - 'stage1'
 jobs:
   branch-name:
     runs-on: ubuntu-latest
