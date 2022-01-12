@@ -8,4 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Branch name
-        run: mkdir -p `${GITHUB_REPOSITORY##*/}_${GITHUB_REPOSITORY##*/}`
+        #run: mkdir -p `${GITHUB_REPOSITORY##*/}_${GITHUB_REPOSITORY##*/}`
+        run: echo $REPO_NAME
+        env:
+          REPO_NAME: ${GITHUB_REPOSITORY##*/}
+          
