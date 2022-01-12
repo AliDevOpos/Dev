@@ -11,10 +11,6 @@ jobs:
         run: echo running on branch ${GITHUB_REF##*/} and repo name is ${GITHUB_REPOSITORY##*/}
       - name: Create Directory base on repo and branch name
         run: | 
-            mkdir -p /opt/$Dir_Name 
-            cd /opt/$Dir_Name
-            pwd 
-        env :
-          Dir_Name: ${GITHUB_REPOSITORY##*/}_${GITHUB_REF##*/}
-            
-      
+            mkdir -p /opt/${GITHUB_REPOSITORY##*\/}
+            cd /opt/${GITHUB_REPOSITORY##*\/}
+            pwd            
