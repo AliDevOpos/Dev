@@ -8,5 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Branch name
-        #run: echo "running on branch $BRANCH_NAME and repo name is $REPO_NAME"
-        run: mkdir ${GITHUB_REPOSITORY##*/} cd ${GITHUB_REPOSITORY##*/}  touch test
+        run: mkdir ${GITHUB_REPOSITORY##*/}_${GITHUB_REPOSITORY##*/}  touch test
