@@ -15,5 +15,5 @@ jobs:
             cd /opt/${GITHUB_REPOSITORY##*\/}_${GITHUB_REF##*\/}
             pwd   
         env: 
-          Bra_Name: GITHUB_REF##*/
-          Repo_Name: GITHUB_REPOSITORY##*/
+          Bra_Name: 'GITHUB_REF##*/'
+          Repo_Name: 'GITHUB_REPOSITORY##*/'
