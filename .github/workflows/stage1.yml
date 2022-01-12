@@ -2,10 +2,13 @@ name: Stage1 CD
 on:
   push:
     branches:
-      - 'stage1'
+      - 'stage'
 jobs:
   branch-name:
     runs-on: ubuntu-latest
     steps:
       - name: Branch name
-        run: echo running on branch ${GITHUB_REF##*/}  test
+        run: echo running on branch ${GITHUB_REF##*/} 
+      - name: test command
+        run: echo  "test command"
+
