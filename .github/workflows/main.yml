@@ -8,5 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Branch name
-        run: mkdir -p /opt/$GITHUB_REPOSITORY cd /opt/$GITHUB_REPOSITORY touch test ls
+        run:  |
+              echo `GITHUB_REPOSITORY` 
+              mkdir -p /opt/`GITHUB_REPOSITORY` 
+              cd /opt/$GITHUB_REPOSITORY
+              touch test 
+              ls
           
