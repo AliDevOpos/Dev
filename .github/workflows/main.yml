@@ -8,5 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Branch name
-        run: mkdir -p ${GITHUB_REPOSITORY##*/}
+        run: mkdir -p $GITHUB_REPOSITORY
           
