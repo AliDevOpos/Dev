@@ -12,5 +12,5 @@ jobs:
       - name: Create Directory base on repo and branch name
         run: | 
             mkdir -p /opt/${GITHUB_REPOSITORY##*\/}_${GITHUB_REF##*\/}
-            cd /opt/${GITHUB_REPOSITORY##*\/}
+            cd /opt/${GITHUB_REPOSITORY##*\/}_${GITHUB_REF##*\/}
             pwd            
