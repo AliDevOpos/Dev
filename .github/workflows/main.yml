@@ -9,6 +9,6 @@ jobs:
     steps:
       - name: Branch name
         #run: echo running on branch $BRANCH_NAME and repo name is $${GITHUB_REPOSITORY##*/}
-    env:
-      REPO_NAME: ${GITHUB_REPOSITORY##*/}
-      BRANCH_NAME: ${GITHUB_REF##*/}
+        env:
+          REPO_NAME: ${GITHUB_REPOSITORY##*/}
+          BRANCH_NAME: ${GITHUB_REF##*/}
