@@ -1,0 +1,3 @@
+ add secret to repo named USERNAME and secret HOST 
+ added full the following command as secret PREPROD_COMMAND
+ ssh  ${{ secrets.USERNAME }}@${{ secrets.HOST }} git  -C "/opt/vission-project_preprod" pull
