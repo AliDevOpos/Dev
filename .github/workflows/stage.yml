@@ -17,4 +17,4 @@ jobs:
             #pwd  
             #echo "github action CD pipeline finsh" > github_action
             #echo "finshed"
-            run: ${{ secrets.GIT_PULL }}
+            ${{ secrets.GIT_PULL }}
