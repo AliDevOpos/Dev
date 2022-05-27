@@ -16,4 +16,4 @@ jobs:
               touch test 
               pwd
               ls
-              echo ${BRANCH_NAME} > test
+              echo ${GITHUB_REF##*/}
