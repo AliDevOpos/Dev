@@ -15,3 +15,4 @@ jobs:
             cd /opt/${GITHUB_REPOSITORY##*\/}_${GITHUB_REF##*\/}
             pwd  
             echo "github action CD pipeline finsh" > github_action
+            echo "finshed"
