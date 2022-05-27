@@ -10,16 +10,10 @@ jobs:
       - name: Branch name
         run:  |
               echo ${GITHUB_REPOSITORY} 
-              #mkdir -p /opt/${GITHUB_REPOSITORY}
-              #cd /opt/$GITHUB_REPOSITORY
+              mkdir -p /opt/${GITHUB_REPOSITORY}
+              cd /opt/$GITHUB_REPOSITORY
               pwd
               touch test 
               pwd
               ls
               echo ${GITHUB_REF##*/}
-              
-      - run: echo ::set-env name=REPOSITORY_NAME::$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}')
-        shell: bash
-
-      - run: echo "$REPOSITORY_NAME"
-        shell: bash
