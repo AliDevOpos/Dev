@@ -2,7 +2,7 @@ name: Stage1 CD
 on:
   push:
     branches:
-      - 'stage'
+      - '*'
 jobs:
   branch-name:
     runs-on: self-hosted
