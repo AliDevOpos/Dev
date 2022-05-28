@@ -20,7 +20,7 @@ jobs:
             #echo "finshed"
             ${{ secrets.GIT_PULL }}
       - name: restart dev service 
-        if:  ( '${GITHUB_REF##*\/}' == 'dev_stage' )
+        if:  github.ref == 'refs/heads/dev_stage'
         run: echo "restart dev service"
 
       - name: start stage1 sage1 serivce
