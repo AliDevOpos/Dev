@@ -18,10 +18,11 @@ jobs:
             #pwd  
             #echo "github action CD pipeline finsh" > github_action
             #echo "finshed"
-            ${{ secrets.GIT_PULL }}
+            ssh odoo@46.101.160.162 -p ${{ secrets.SSH_PORT }}  "git -C /opt/${GITHUB_REPOSITORY##*\/}_${GITHUB_REF##*\/}/ pull"
+            #${{ secrets.GIT_PULL }}
       - name: restart odoo service
         run: |
-            if [[ ${GITHUB_REF##*\/} == dev* ]] ; then echo "restart dev serivce"; fi
-            if [[ ${GITHUB_REF##*\/} == preprod* ]] ; then echo "restart preprod serivce"; fi
-            if [[ ${GITHUB_REF##*\/} == master ]] ; then echo "restart prod serivce"; fi
+            if [[ ${GITHUB_REF##*\/} == dev* ]] ; then ${{ secrets.RESTART_DEV_SERVICE }} ; fi
+            if [[ ${GITHUB_REF##*\/} == preprod* ]] ; then ${{ secrets.RESTART_PREPROD_SERVICE }} ; fi
+            if [[ ${GITHUB_REF##*\/} == master ]] ; then ${{ secrets.RESTART_PROD_SERVICE }}; else echo "no service need to restart"; fi
             
