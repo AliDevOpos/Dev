@@ -23,7 +23,7 @@ jobs:
             
       - name: restart dev service 
         if: gihub.ref.name == 'stage'
-        run: echo "restart ${{ GITHUB_REF_NAME }} "
+        run: echo "restart restart stagre service "
 
       - name: start stage1 sage1 serivce
         if: gihub.ref.name == 'dev_*' 
