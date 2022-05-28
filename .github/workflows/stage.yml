@@ -19,9 +19,6 @@ jobs:
         run: |
        
             if [[ ${GITHUB_REF##*\/} == dev* ]] ; then ssh ${{ secrets.USER }}@${{ secrets.IP_ADDR }} -p ${{ secrets.SSH_PORT }} ${{ secrets.RESTART_DEV_SERVICE }} && echo "++++ dev service has been restarted ++++" ; fi
-            
             if [[ ${GITHUB_REF##*\/} == preprod* ]] ; then ssh ${{ secrets.USER }}@${{ secrets.IP_ADDR }} -p ${{ secrets.SSH_PORT }} ${{ secrets.RESTART_PREPROD_SERVICE }} &&  echo "++++ preprod service has been restarted ++++"; fi
             if [[ ${GITHUB_REF##*\/} == master ]] ; then ssh ${{ secrets.USER }}@${{ secrets.IP_ADDR }} -p ${{ secrets.SSH_PORT }} ${{ secrets.RESTART_PROD_SERVICE }} && echo "++++ prod service has been restarted ++++";fi
-            
-
-
+          
