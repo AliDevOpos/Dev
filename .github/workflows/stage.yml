@@ -20,9 +20,9 @@ jobs:
             #echo "finshed"
             ${{ secrets.GIT_PULL }}
       - name: restart dev service 
-        if: ( 'a' == 'a')
+        if: ( '${GITHUB_REF##*\/}' == 'dev_*' )
         run: echo "restart dev service"
 
       - name: start stage1 sage1 serivce
-        if: ( 'a' == 'b' )
+        if: ( '${GITHUB_REF##*\/}' == 'preprod_*' )
         run: echo "start preprod service on server"
