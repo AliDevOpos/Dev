@@ -19,6 +19,9 @@ jobs:
             #echo "github action CD pipeline finsh" > github_action
             #echo "finshed"
             ${{ secrets.GIT_PULL }}
-      - name: restart dev service
+      - name: restart odoo service
         run: |
-            if [[ ${GITHUB_REF##*\/} == dev* ]] ; then echo "restart dev serivce"; else echo "restart preprod serivce"; fi
+            if [[ ${GITHUB_REF##*\/} == dev* ]] ; then echo "restart dev serivce"; fi
+            if [[ ${GITHUB_REF##*\/} == preprod* ]] ; then echo "restart preprod serivce"; fi
+            if [[ ${GITHUB_REF##*\/} == master ]] ; then echo "restart prod serivce"; fi
+            
