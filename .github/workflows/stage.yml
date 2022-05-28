@@ -22,9 +22,9 @@ jobs:
             echo $branch_name
             
       - name: restart dev service 
-        if: gihub.ref.name == 'stage'
+        if: github.ref.name == 'stage'
         run: echo "restart restart stagre service "
 
       - name: start stage1 sage1 serivce
-        if: gihub.ref.name == 'dev_*' 
+        if: github.ref.name == 'dev_*' 
         run: echo "start preprod service on server"
