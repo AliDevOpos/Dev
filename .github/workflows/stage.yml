@@ -21,3 +21,5 @@ jobs:
             if [[ ${GITHUB_REF##*\/} == preprod* ]] ; then ssh ${{ secrets.USER }}@${{ secrets.IP_ADDR }} -p ${{ secrets.SSH_PORT }} ${{ secrets.RESTART_PREPROD_SERVICE }} ; fi
             if [[ ${GITHUB_REF##*\/} == master ]] ; then ssh ${{ secrets.USER }}@${{ secrets.IP_ADDR }} -p ${{ secrets.SSH_PORT }} ${{ secrets.RESTART_PROD_SERVICE }}; else echo "no service need to restart"; fi
             
+
+
