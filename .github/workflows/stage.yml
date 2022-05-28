@@ -22,7 +22,7 @@ jobs:
             echo $branch_name
             
       - name: restart dev service 
-        if:  ( ${GITHUB_REF_NAME} == 'dev_stage' )
+        if:  ( ${{ GITHUB_REF_NAME }} == 'dev_stage' )
         run: echo "restart dev service"
 
       #- name: start stage1 sage1 serivce
