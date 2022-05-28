@@ -22,7 +22,7 @@ jobs:
             #${{ secrets.GIT_PULL }}
       - name: restart odoo service
         run: |
-            if [[ ${GITHUB_REF##*\/} == dev* ]] ; then ${{ secrets.RESTART_DEV_SERVICE;; fi
-            if [[ ${GITHUB_REF##*\/} == preprod* ]] ; then ${{ secrets.RESTART_PREPROD_SERVICE; fi
-            if [[ ${GITHUB_REF##*\/} == master ]] ; then ${{ secrets.RESTART_PROP_SERVICE;; els echo "nothing to do"; fi
+            if [[ ${GITHUB_REF##*\/} == dev* ]] ; then ${{ secrets.RESTART_DEV_SERVICE }}; fi
+            if [[ ${GITHUB_REF##*\/} == preprod* ]] ; then ${{ secrets.RESTART_PREPROD_SERVICE }}; fi
+            if [[ ${GITHUB_REF##*\/} == master ]] ; then ${{ secrets.RESTART_PROP_SERVICE }}; els echo "nothing to do"; fi
             
