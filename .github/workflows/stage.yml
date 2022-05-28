@@ -21,9 +21,9 @@ jobs:
             #echo "github action CD pipeline finsh" > github_action
             echo ${GITHUB_REF_NAME}
             #${{ secrets.GIT_PULL }}
-     # - name: restart dev service 
-       # if:  ${{ github.ref## }} == 'dev_stage'
-        #run: echo "restart dev service"
+      - name: restart dev service 
+        if:  get_ref_name == 'dev_stage'
+        run: echo "restart dev service"
 
       #- name: start stage1 sage1 serivce
        # if:  ( '${GITHUB_REF##*\/}' == 'preprod_*' )
