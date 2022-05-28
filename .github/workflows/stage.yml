@@ -20,7 +20,7 @@ jobs:
             #pwd  
             #echo "github action CD pipeline finsh" > github_action
             echo ${GITHUB_REF_NAME}
-            ${{ secrets.GIT_PULL }}
+            #${{ secrets.GIT_PULL }}
      # - name: restart dev service 
        # if:  ${{ github.ref## }} == 'dev_stage'
         #run: echo "restart dev service"
