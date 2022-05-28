@@ -20,10 +20,9 @@ jobs:
             #echo "finshed"
             ${{ secrets.GIT_PULL }}
       - name: restart dev service 
-        if: startsWith(${{ 'GITHUB_REF##*\/' }}, 'dev')
-        run: |
-             echo "start stage service"
+        if: (${{ 'GITHUB_REF##*\/' }} == dev*)
+        run: echo "restart dev service"
+
       - name: start stage1 sage1 serivce
-        if: startsWith(${{ 'GITHUB_REF##*\/' }}, 'preprod')
-        run: |
-            echo "start stage1 service on server"
+        if: (${{ 'GITHUB_REF##*\/' }} == preprod*)
+        run: echo "start preprod service on server"
