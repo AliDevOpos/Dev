@@ -6,7 +6,7 @@ on:
 jobs:
   branch-name:
     runs-on: self-hosted
-    env: 
+    #env: 
       #branch_name: ${{ GITHUB_REF_NAME }}
     steps:
       - name: Get Repo Branch Name
