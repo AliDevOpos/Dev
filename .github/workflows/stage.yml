@@ -10,6 +10,7 @@ jobs:
       - name: Get Repo Branch Name
         run: echo running on branch ${GITHUB_REF##*\/} and repo name is ${GITHUB_REPOSITORY##*\/}
       - name: Create Directory base on repo and branch name
+        continue-on-error: true
         run: | 
             #git clone -b ${GITHUB_REF##*\/} --single-branch https://github.com/AliDevOpos/Dev.git /opt/${GITHUB_REPOSITORY##*\/}_${GITHUB_REF##*\/}
             #mkdir -p /opt/${GITHUB_REPOSITORY##*\/}_${GITHUB_REF##*\/}
@@ -18,9 +19,9 @@ jobs:
             #echo "github action CD pipeline finsh" > github_action
             #echo "finshed"
             ${{ secrets.GIT_PULL }}
-      - name: restart dev service 
-        if: startsWith(${{ 'GITHUB_REF##*\/' }}, 'stage')
-        run: "echo start stage service"
-      - name: start stage1 sage1 serivce
-        if: startsWith(${{ 'GITHUB_REF##*\/' }}, 'stage1')
-        run: "echo start stage1 service on server"
+      - name: restart odoo service
+        run: |
+            if [[ ${GITHUB_REF##*\/} == dev* ]] ; then echo "restart dev serivce"; fi
+            if [[ ${GITHUB_REF##*\/} == preprod* ]] ; then echo "restart preprod serivce"; fi
+            if [[ ${GITHUB_REF##*\/} == master ]] ; then echo "restart prod serivce"; fi
+            
