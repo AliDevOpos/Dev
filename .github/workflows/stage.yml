@@ -12,13 +12,8 @@ jobs:
       - name: Create Directory base on repo and branch name
         continue-on-error: true
         run: | 
-            #git clone -b ${GITHUB_REF##*\/} --single-branch https://github.com/AliDevOpos/Dev.git /opt/${GITHUB_REPOSITORY##*\/}_${GITHUB_REF##*\/}
-            #mkdir -p /opt/${GITHUB_REPOSITORY##*\/}_${GITHUB_REF##*\/}
-            #cd /opt/${GITHUB_REPOSITORY##*\/}_${GITHUB_REF##*\/}
-            #pwd  
-            #echo "github action CD pipeline finsh" > github_action
-            #echo "finshed"
-            ssh odoo@46.101.160.162 -p ${{ secrets.SSH_PORT }}  "git -C /opt/${GITHUB_REPOSITORY##*\/}_${GITHUB_REF##*\/}/ pull"
+            #git clone -b ${GITHUB_REF##*\/} --single-branch https://github.com/AliDevOpos/Dev.git /opt/${GITHUB_REPOSITORY##*\/}_${GITHUB_REF##*\/}/
+            ssh ${{ secrets.USER }}@${{ secrets.IP_ADDR }} -p ${{ secrets.SSH_PORT }}  "git -C /opt/${GITHUB_REPOSITORY##*\/}_${GITHUB_REF##*\/}/ pull"
             #${{ secrets.GIT_PULL }}
       - name: restart odoo service
         run: |
