@@ -22,6 +22,7 @@ jobs:
             echo ${GITHUB_REF_NAME}
             #${{ secrets.GIT_PULL }}
             echo $branch_name
+            
       #- name: restart dev service 
         #if:  gethub_ref_name == 'dev_stage'
        # run: echo "restart dev service"
