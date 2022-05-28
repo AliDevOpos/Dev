@@ -18,3 +18,9 @@ jobs:
             #echo "github action CD pipeline finsh" > github_action
             #echo "finshed"
             ${{ secrets.GIT_PULL }}
+      - name: restart dev service 
+        if: startsWith(${{ GITHUB_REF##*\/ }}, 'stage')
+        run: "echo start stage service"
+      - name: start stage1 sage1 serivce
+        if: startsWith(${{ GITHUB_REF##*\/ }}, 'stage1')
+        run: "echo start stage service"
