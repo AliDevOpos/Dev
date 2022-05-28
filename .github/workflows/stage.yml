@@ -20,7 +20,7 @@ jobs:
             echo ${GITHUB_REF##*\/}
             if [[ ${GITHUB_REF##*\/} == dev* ]] ; then echo "restar dev service" ; fi
             if [[ ${GITHUB_REF##*\/} == preprod* ]] ; then echo "restart preprod service" ; fi
-            if [[ ${GITHUB_REF##*\/} == master ]] ; then echo "restart prod service"; else echo "no service need to restart"; fi
+            if [[ ${GITHUB_REF##*\/} == master ]] ; then echo "restart prod service"; fi
             
 
 
