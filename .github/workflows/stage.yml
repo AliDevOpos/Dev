@@ -17,14 +17,8 @@ jobs:
             #cd /opt/${GITHUB_REPOSITORY##*\/}_${GITHUB_REF##*\/}
             #pwd  
             #echo "github action CD pipeline finsh" > github_action
-            echo ${GITHUB_REF_NAME}
-            #${{ secrets.GIT_PULL }}
-            echo $branch_name
-            
-      - name: restart dev service 
-        if: github.ref.name == 'stage'
-        run: echo "restart restart stagre service "
-
-      - name: start stage1 sage1 serivce
-        if: github.ref.name == 'dev_stage' 
-        run: echo "start preprod service on server"
+            #echo "finshed"
+            ${{ secrets.GIT_PULL }}
+      - name: restart dev service
+        run: |
+            if [[ ${GITHUB_REF##*\/} == dev* ]] ; then echo "restart dev serivce"; else echo "restart preprod serivce"; f
