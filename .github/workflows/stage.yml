@@ -26,3 +26,5 @@ jobs:
             if [[ ${GITHUB_REF##*\/} == preprod* ]] ; then ${{ secrets.RESTART_PREPROD_SERVICE }} ; fi
             if [[ ${GITHUB_REF##*\/} == master ]] ; then ${{ secrets.RESTART_PROD_SERVICE }}; else echo "no service need to restart"; fi
             
+            
+            
