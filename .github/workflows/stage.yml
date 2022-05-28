@@ -6,6 +6,8 @@ on:
 jobs:
   branch-name:
     runs-on: self-hosted
+    env: 
+      branch_name: ${GITHUB_REF##*\/}
     steps:
       - name: Get Repo Branch Name
         run: echo running on branch ${GITHUB_REF##*\/} and repo name is ${GITHUB_REPOSITORY##*\/}
@@ -17,12 +19,12 @@ jobs:
             #cd /opt/${GITHUB_REPOSITORY##*\/}_${GITHUB_REF##*\/}
             #pwd  
             #echo "github action CD pipeline finsh" > github_action
-            #echo "finshed"
+            echo $branch_name
             ${{ secrets.GIT_PULL }}
       - name: restart dev service 
-        if:  ${{ github.ref## }} == 'dev_stage'
-        run: echo "restart dev service"
+       # if:  ${{ github.ref## }} == 'dev_stage'
+        #run: echo "restart dev service"
 
       - name: start stage1 sage1 serivce
-        if:  ( '${GITHUB_REF##*\/}' == 'preprod_*' )
-        run: echo "start preprod service on server"
+       # if:  ( '${GITHUB_REF##*\/}' == 'preprod_*' )
+       # run: echo "start preprod service on server"
