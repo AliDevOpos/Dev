@@ -21,10 +21,10 @@ jobs:
             #echo "github action CD pipeline finsh" > github_action
             echo $branch_name
             ${{ secrets.GIT_PULL }}
-      - name: restart dev service 
+     # - name: restart dev service 
        # if:  ${{ github.ref## }} == 'dev_stage'
         #run: echo "restart dev service"
 
-      - name: start stage1 sage1 serivce
+      #- name: start stage1 sage1 serivce
        # if:  ( '${GITHUB_REF##*\/}' == 'preprod_*' )
        # run: echo "start preprod service on server"
