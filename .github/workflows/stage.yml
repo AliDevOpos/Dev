@@ -18,7 +18,7 @@ jobs:
       - name: restart odoo service
         run: |
             echo "++++ dev service has been restarted ++++"
-            if [[ ${GITHUB_REF##*\/} == dev* ]] ; then ssh ${{ secrets.USER }}@${{ secrets.IP_ADDR }} -p ${{ secrets.SSH_PORT }} ${{ secrets.RESTART_DEV_SERVICE }} echo "++++ dev service has been restarted ++++" ; fi
+            if [[ ${GITHUB_REF##*\/} == dev* ]] ; then ssh ${{ secrets.USER }}@${{ secrets.IP_ADDR }} -p ${{ secrets.SSH_PORT }} ${{ secrets.RESTART_DEV_SERVICE }} && echo "++++ dev service has been restarted ++++" ; fi
             
             if [[ ${GITHUB_REF##*\/} == preprod* ]] ; then ssh ${{ secrets.USER }}@${{ secrets.IP_ADDR }} -p ${{ secrets.SSH_PORT }} ${{ secrets.RESTART_PREPROD_SERVICE }} ; fi
             echo "++++ preprod service has been restarted ++++"
