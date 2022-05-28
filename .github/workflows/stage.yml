@@ -26,5 +26,5 @@ jobs:
         run: echo "restart restart stagre service "
 
       - name: start stage1 sage1 serivce
-        if: github.ref.name == 'dev_*' 
+        if: github.ref.name == 'dev_stage' 
         run: echo "start preprod service on server"
