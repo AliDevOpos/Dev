@@ -24,7 +24,7 @@ jobs:
             echo $branch_name
       #- name: restart dev service 
         #if:  gethub_ref_name == 'dev_stage'
-        run: echo "restart dev service"
+       # run: echo "restart dev service"
 
       #- name: start stage1 sage1 serivce
        # if:  ( '${GITHUB_REF##*\/}' == 'preprod_*' )
