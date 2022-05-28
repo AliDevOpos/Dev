@@ -10,8 +10,9 @@ jobs:
       - name: Get Repo Branch Name
         run: echo running on branch ${GITHUB_REF##*\/} and repo name is ${GITHUB_REPOSITORY##*\/}
       - name: Create Directory base on repo and branch name
+        continue-on-error: true
         run: | 
-            git clone -b ${GITHUB_REF##*\/} --single-branch https://github.com/AliDevOpos/Dev.git /opt/${GITHUB_REPOSITORY##*\/}_${GITHUB_REF##*\/}
+            #git clone -b ${GITHUB_REF##*\/} --single-branch https://github.com/AliDevOpos/Dev.git /opt/${GITHUB_REPOSITORY##*\/}_${GITHUB_REF##*\/}
             #mkdir -p /opt/${GITHUB_REPOSITORY##*\/}_${GITHUB_REF##*\/}
             #cd /opt/${GITHUB_REPOSITORY##*\/}_${GITHUB_REF##*\/}
             #pwd  
