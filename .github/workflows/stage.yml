@@ -21,7 +21,7 @@ jobs:
             ${{ secrets.GIT_PULL }}
       - name: restart dev service 
        # if: ( ${{GITHUB_REF##*\/}} == 'dev_stage' )
-        if: ${{ startsWith(${{GITHUB_REF##*\/}}, 'dev') }}
+        if: ${{ startsWith('${GITHUB_REF##*\/}', 'dev') }}
         run: echo "restart dev service"
 
       - name: start stage1 sage1 serivce
