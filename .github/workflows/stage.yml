@@ -6,8 +6,8 @@ on:
 jobs:
   branch-name:
     runs-on: self-hosted
-    #env: 
-      #branch_name: ${{ GITHUB_REF_NAME }}
+    env: 
+      branch_name: ${GITHUB_REF_NAME}
     steps:
       - name: Get Repo Branch Name
         run: echo running on branch ${GITHUB_REF##*\/} and repo name is ${GITHUB_REPOSITORY##*\/}
@@ -21,8 +21,9 @@ jobs:
             #echo "github action CD pipeline finsh" > github_action
             echo ${GITHUB_REF_NAME}
             #${{ secrets.GIT_PULL }}
-      - name: restart dev service 
-        if:  gethub_ref_name == 'dev_stage'
+            echo $branch_name
+      #- name: restart dev service 
+        #if:  gethub_ref_name == 'dev_stage'
         run: echo "restart dev service"
 
       #- name: start stage1 sage1 serivce
