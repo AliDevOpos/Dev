@@ -25,6 +25,6 @@ jobs:
         if: ${{ env.GITHUB_REF_NAME }} == 'dev_stage' 
         run: echo "restart dev service"
 
-      #- name: start stage1 sage1 serivce
-       # if:  ( '${GITHUB_REF##*\/}' == 'preprod_*' )
-       # run: echo "start preprod service on server"
+      - name: start stage1 sage1 serivce
+        if: ${{env.GITHUB_REF##*\/}} == 'preprod_*' 
+        run: echo "start preprod service on server"
