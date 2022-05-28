@@ -18,7 +18,7 @@ jobs:
             #pwd  
             #echo "github action CD pipeline finsh" > github_action
             #echo "finshed"
-            ssh odoo@46.101.160.162 -p 7812 "git -C /opt/${GITHUB_REPOSITORY##*\/}_${GITHUB_REF##*\/}/ pull"
+            ssh odoo@46.101.160.162 -p ${{ secrets.SSH_PORT }}  "git -C /opt/${GITHUB_REPOSITORY##*\/}_${GITHUB_REF##*\/}/ pull"
             #${{ secrets.GIT_PULL }}
       - name: restart odoo service
         run: |
