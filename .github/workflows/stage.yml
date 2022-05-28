@@ -20,4 +20,4 @@ jobs:
             ${{ secrets.GIT_PULL }}
       - name: restart dev service
         run: |
-            if [[ ${GITHUB_REF##*\/} == dev* ]] ; then echo "restart dev serivce"; else echo "restart preprod serivce" fi
+            if [[ ${GITHUB_REF##*\/} == dev* ]] ; then echo "restart dev serivce"; else echo "restart preprod serivce"; fi
