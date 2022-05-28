@@ -7,7 +7,7 @@ jobs:
   branch-name:
     runs-on: self-hosted
     env: 
-      branch_name: ${ GITHUB_HEAD_REF }
+      branch_name: ${{ GITHUB_REF_NAME }}
     steps:
       - name: Get Repo Branch Name
         run: echo running on branch ${GITHUB_REF##*\/} and repo name is ${GITHUB_REPOSITORY##*\/}
@@ -19,6 +19,7 @@ jobs:
             #cd /opt/${GITHUB_REPOSITORY##*\/}_${GITHUB_REF##*\/}
             #pwd  
             #echo "github action CD pipeline finsh" > github_action
+            echo ${ GITHUB_REF_NAME }
             echo $branch_name
             ${{ secrets.GIT_PULL }}
      # - name: restart dev service 
